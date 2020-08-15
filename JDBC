@@ -26,6 +26,39 @@ SQL Providers/No SQL - Not an RDBMS  :
   5.Process the result 
   6.close connection 
  
+ JDBC Connection using Eclipise to Load JDBC 
  
+ public class Hellojdbc{
  
+ public static void main(String[]args) {
+ try{
+ //step1 :load Driver
+ class.forname("oracle.jdbc.oracledriver");
+ system.out.prinln("Driver Loaded");
+ //step 2 :Authendication and URL Link
+ connection = Drivermanager.getconnection(url,username,password);
+ string url ="URL of oracle";
+ string username = "üsername";
+ string password = "password";
+ //step 3: create statement
+ statement statement =connection.createstatement();
+ string sql ="select id,name,ob,age from player";
+ //step 4:Execute Query
+ resultset resultset = connection.executequery(sql);
+ system.out.println("it is executed"");
+ //step 5:Process the result 
+ While(result.next()) {
+ system.out.println("id =" resultset.getint(id));
+ }
+ catch(classnotfoundException e){
+ system.out.println(e);
+ }fianlly{
+ try{
+ //step6: close connection
+ connection.close();
+ system.out.println(connection closed);
+ }catch (sqlexception e){
+ system.out.println(e);
+ }
+ }
   
