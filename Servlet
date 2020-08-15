@@ -1,1 +1,24 @@
-
+JDBC Connection - Java can hold maximum of 1000 Data not more than using the List or serialization/deserializaion - Data Not organised properly , so used the sql 
+Three layers - Presentation , Business Layer and Presistance Layer or Database Layer 
+SQL Providers/No SQL - Not an RDBMS  :
+  1.Storage - Large Storage and information permannently 
+  2.organized Database management (RDBMS) - Sepration of Tables 
+  3.SQL(DDL,DML,DCL ,TCL ,DQL)
+  
+  JDBC DB Connection 
+  1.JDBC ODBC Driver 
+  2.Java Native API 
+  3.Network Protocol 
+  4.Database Protocol (thin)- 100%pj Driver - lesser memory database
+  
+ Steps to Intract with Database 
+ 1.Load or Register Driver (Jar files)
+ 2.Open connection (url, Authendication to database)
+ 3.Create Statement
+    -statement 
+      -prepared statement 
+      -callable statement
+ 
+ 
+ 
+  
