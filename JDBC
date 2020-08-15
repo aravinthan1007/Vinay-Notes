@@ -16,8 +16,15 @@ SQL Providers/No SQL - Not an RDBMS  :
  2.Open connection (url, Authendication to database)
  3.Create Statement
     -statement 
-      -prepared statement 
-      -callable statement
+      -prepared statement - compile 1 time and run multiple times
+      -callable statement - intrating with psql,nosql etc (strored procdure)
+    SQL Injection - 
+  4.Execute Query 
+    -boolean Execute -DDL PL/SQL
+    -int execute update -DML
+    -Result Execute query - 
+  5.Process the result 
+  6.close connection 
  
  
  
