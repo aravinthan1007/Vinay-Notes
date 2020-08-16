@@ -250,6 +250,144 @@ createplayer(V_id ,'testplayer',1234567890,22,103,'10/10/1993');
 DBMS_output.put_line(||V_ID);
 end 
 
+Create Player.java class in sts with getters and setters 
+
+package eg2;
+
+import java.util.Date;
+
+public class Player {
+
+	private int id;
+	private String name;
+	private int age;
+	private Date dob;
+	private int tid;
+	private long contact;
+	public Player() {
+		// TODO Auto-generated constructor stub
+	}
+	public Player(String name, int age, Date dob, int tid, long contact) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.dob = dob;
+		this.tid = tid;
+		this.contact = contact;
+	}
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", name=" + name + ", age=" + age + ", dob=" + dob + ", tid=" + tid + ", contact="
+				+ contact + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public int getTid() {
+		return tid;
+	}
+	public void setTid(int tid) {
+		this.tid = tid;
+	}
+	public long getContact() {
+		return contact;
+	}
+	public void setContact(long contact) {
+		this.contact = contact;
+	}
+	
+}
+
+Step 2: Player DAO Class : Caller statement Example 
+package eg2;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
+import com.dbutil.OracleConnection;
+
+public class PlayerDAO {
+
+	
+	public Player createPlayer(Player player) throws Exception {
+		
+		try(Connection connection=OracleConnection.getConnection()){
+			CallableStatement callableStatement=connection.prepareCall("{call CREATEPLAYER(?,?,?,?,?,?)}");
+			callableStatement.setString(2, player.getName());
+			callableStatement.setLong(3, player.getContact());
+			callableStatement.setInt(4, player.getAge());
+			callableStatement.setInt(5, player.getTid());
+			callableStatement.setDate(6, new java.sql.Date(player.getDob().getTime()));
+			callableStatement.registerOutParameter(1, java.sql.Types.NUMERIC);
+			
+			callableStatement.execute();
+			player.setId(callableStatement.getInt(1));
+			
+		}catch(SQLIntegrityConstraintViolationException e) {
+			throw new Exception("Player Contact "+player.getContact()+" exists in the database.");
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
+			throw new Exception("Internal error occured contact SYSADMIN");
+		}
+		return player;
+	}
+}/*
+for PLSQL function call do this
+{?=call CREATEPLAYER(?,?,?,?,?)}
+rest will be the same as you did for procedure
+*/
+step 3: Main .Java : to call DAO and Player class 
+
+package eg2;
+
+import java.util.Date;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		PlayerDAO dao=new PlayerDAO();
+		Player player=new Player("Mahesh", 29, new Date(), 101, 7891230898L);
+		try {
+			player=dao.createPlayer(player);
+			if(player.getId()!=0) {
+				System.out.println("Player created with below details");
+				System.out.println(player);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+
+	}
+
+}
+
+
 
 
 
