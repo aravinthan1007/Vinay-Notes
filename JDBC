@@ -177,11 +177,79 @@ pointer - are called cursor , like ticket booking incase transaction rolledback 
 Step 1 :Syntax PSQL - set serveroutput ON;
 Anymous block - 
 
-Syntax 
+Architecture  
 Declare - things needs to be Declare the data types or declaration block and not mandotry include 
 Execution block is mandotry 
 Exception block is also not mandotry 
 end 
+
+Syntax:
+PL/SQL Hello world code:
+begin 
+DBMS_output.put_Line('hello psql');
+end;
+
+PL/sql Declartion Example with procdure and function  :
+declare 
+name varchar2 (20) := 'simplilearn';
+begin 
+DBMS_output.puy_line('hello' ||name);
+helloproc();
+DBMS_output.puy_line(hellofunc());
+end 
+
+Create or replace procedure helloproc as 
+begin 
+DBMS_output.puy_line('hello Procedure');
+end helloproc;
+
+
+Create or replace function helloproc return varchar2 as 
+begin 
+return'hello function ';
+end helloproc;
+
+Parameter in PL/SQL
+  1.In-input 
+  2.out- output 
+  3.inout - input/output - can be send and modifiable the procedure 
+
+Code Example with parameter :
+begin 
+DBMS_output.put_line('result =' ||result);
+end 
+ 
+ Create or replace procedure sumof2number(a number, b number , res out number ) as
+ begin
+  res: = a+b;
+  end;
+  
+  Auto increment in ID using PL/SQL procedure and Sequence :
+  
+  1.Go to player table 
+  2. click on + and procedure 
+  3. V_ID,V_Name,V_DOB,V_Age,V-TID 
+  4. create sequence enter name as player_seq 
+  5.enter v-ID and start from 30000 
+  
+  Code in procedure below :
+  Create or replace procedure player {
+  V_ID out number, 
+  V_Name IN Varchar2, 
+  V_Contact IN Number, 
+  V_dob IN date, 
+  V_TID IN number, 
+  }
+  begin 
+  select player_seq.nextval into V_ID frm dual 
+  insert into player(id,name,dob,age,tid) values(V_ID,V_NAME,V_DOB,V_CONTACT,V_DOb,V_TID)
+  end helloproc;
+
+begin 
+createplayer(V_id ,'testplayer',1234567890,22,103,'10/10/1993');
+DBMS_output.put_line(||V_ID);
+end 
+
 
 
 
