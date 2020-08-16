@@ -26,7 +26,7 @@ SQL Providers/No SQL - Not an RDBMS  :
   5.Process the result 
   6.close connection 
  
- JDBC Connection using Eclipise to Load JDBC 
+ JDBC Connection using Eclipise to Load JDBC (statement type Example)
  
  public class Hellojdbc{
  
@@ -82,9 +82,108 @@ public static connection getconnection() throws sqlexception ,classnotfoundExcep
 }
 }
 
-Create player and Team in Database 
+insert into player and Team in Database 
 
 Player table with 
-create Name,ID,DOB,TID from table;
+insert to player Name,ID,DOB,TID from table;
 
 TID is forign key to team table - refence with the Team table 
+
+public class insertdemo {
+public static void main (string [] args) {
+
+try(connection connection = oracleconnection.getconnection()){
+string sql1 ="insert into team(tid,teamname) values(? ,?)";
+string sql2 ="insert into player(id,name,dob,age,tid) values(? ,?,?,?,?)";
+preparedstatement preparedstatement = connection.preparedstatement(sql1);
+preparedstatement.setint(1,101);
+preparedstatement.setstring(2,red);
+int x=preparedstatement.executeupdate();
+system.out.println(x+"team updated");
+}
+catch(classnotfoundexception | sqlexception e){
+system.put.println(e);
+}
+}
+
+Modify the above code:
+
+public class insertdemo {
+public static void main (string [] args) {
+
+try(connection connection = oracleconnection.getconnection()){
+
+string sql2 ="insert into player(id,name,dob,age,tid) values(? ,?,?,?,?)";
+preparedstatement preparedstatement = connection.preparedstatement(sql2);
+preparedstatement.setint(1,101);
+preparedstatement.setstring(2,Aravind);
+preparedstatement.setint(3, new java.sql.date(new date()));
+preparedstatement.setint(4,29);
+preparedstatement.setint(5,102);
+int x=preparedstatement.executeupdate();
+system.out.println(x+"team updated");
+
+}
+catch(classnotfoundexception | sqlexception e){
+if(e instanceof sqlexecption) {
+try {
+connection.rollback();//used rollback the query 
+system.put.println("Query rollback"+connection);
+} catch (SQL Exception e) {
+system.out.println(e1);
+}
+}
+
+e.printstacktrace();
+}
+finally {
+if(connection !=null){
+try{
+connection.close();
+}catch(sqlexception e){
+system.out.println(e);
+}
+}
+public static int createteam(connection connection ,int tid,string teamname) {
+string sql1 ="insert into team(tid,teamname) values(? ,?)";
+int x=0;
+try{
+preparedstatement preparedstatement = connection.preparedstatement(sql1);
+preparedstatement.setint(1,101);
+preparedstatement.setstring(2,red);
+int x=preparedstatement.executeupdate();
+system.out.println(x+"team updated");
+}
+
+} 
+
+
+
+PL/SQL - SQL is not able to remember the query , but PSQL as reusable option 
+
+PL
+Methods(resuable)
+loops 
+decision
+Exception 
+data structure collection 
+Array 
+index by table 
+table 
+record 
+trigger - delete , update , inser trigger is used eg (10% discount to user , but user request to get 11 % discount , trigger will execute and inform the user 10% discount only)
+pointer - are called cursor , like ticket booking incase transaction rolledback or success resleased to the user 
+
+Step 1 :Syntax PSQL - set serveroutput ON;
+Anymous block - 
+
+Syntax 
+Declare - things needs to be Declare the data types or declaration block and not mandotry include 
+Execution block is mandotry 
+Exception block is also not mandotry 
+end 
+
+
+
+
+
