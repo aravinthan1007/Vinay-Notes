@@ -62,3 +62,29 @@ SQL Providers/No SQL - Not an RDBMS  :
  }
  }
   
+Common connection for Complete Java Program :
+
+public oracleconnection {
+
+private static connection connection {
+
+public static connection getconnection() throws sqlexception ,classnotfoundException {
+
+//step1 :load Driver
+ class.forname("oracle.jdbc.oracledriver");
+ system.out.prinln("Driver Loaded");
+ //step 2 :Authendication and URL Link
+ 
+ string url ="URL of oracle";
+ string username = "üsername";
+ string password = "password";
+ retun connection = Drivermanager.getconnection(url,username,password);
+}
+}
+
+Create player and Team in Database 
+
+Player table with 
+create Name,ID,DOB,TID from table;
+
+TID is forign key to team table - refence with the Team table 
