@@ -193,14 +193,14 @@ PL/sql Declartion Example with procdure and function  :
 declare 
 name varchar2 (20) := 'simplilearn';
 begin 
-DBMS_output.puy_line('hello' ||name);
+DBMS_output.put_line('hello' ||name);
 helloproc();
-DBMS_output.puy_line(hellofunc());
+DBMS_output.put_line(hellofunc());
 end 
 
 Create or replace procedure helloproc as 
 begin 
-DBMS_output.puy_line('hello Procedure');
+DBMS_output.put_line('hello Procedure');
 end helloproc;
 
 
@@ -241,7 +241,7 @@ end
   V_TID IN number, 
   }
   begin 
-  select player_seq.nextval into V_ID frm dual 
+  select player_seq.nextval into V_ID from dual 
   insert into player(id,name,dob,age,tid) values(V_ID,V_NAME,V_DOB,V_CONTACT,V_DOb,V_TID)
   end helloproc;
 
