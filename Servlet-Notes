@@ -19,6 +19,28 @@ response - content type(text/html/image )
 status code - varios are status code of HTTP - https://www.restapitutorial.com/httpstatuscodes.html
 Architecture pasted in the issue in Githb for reference 
 
+CGI - is traitional method , CGI improves the hardware part and it is not part of the Multithreading 
+Servlet API - uses Multi threading concept 
+Life cycle of servlet :
+1)Void init(servlet config)
+2}void service(servletrequest,servletreponse) - what exactly servlet need to do, process and respone preformed here 
+3)void destroy()
+
+Servlet Hierarchy:
+Generic servlet - it handle anyother protocol
+Httpservlet - Http specific in place of service method , put,post ,delete is child of generic servlet 
+Void service(httpservlet response, httpservlet request)
+void doget(httpservlet response, httpservlet request)
+void do post*httpservlet response, httpservlet request)
+void doput(httpservlet response, httpservlet request)
+above mentoned are HTTP related services 
+
+JVM - work with OS to implement the multi threading , Each and every OS has mlti threading 
+
+
+
+
+
 
 
 
