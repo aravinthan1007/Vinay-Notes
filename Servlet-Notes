@@ -1,6 +1,8 @@
 JAVA EE - Enterprise solution 
 HTTP - is light weight , stateless,fasterst protocol 
 Stateles - HTTP don't remember the data ,Broweser remeber , inorder to change from stateless to stateful method we are using servlet or JSP menthod 
+
+HTTP Method :
 Get request - get uphend the inormation in the end of the url, size limitation, get the information fom the server , GET is used
 Post Request - it would't send at the end of URL , browser payload o send the data to application, it will split part by part, creation of something post request is used
 put/patch - Partial modification patch is used and coplete modification put is used 
@@ -8,3 +10,13 @@ Delete - delete the request
 head - used for meta information - like browser version , call was made of 
 trace - trace the valid client 
 option - Dopdown used 
+
+Type (HTTP Method)
+- Meta infomtion - request header - information about client and data 
+-data - information 
+
+response - content type(text/html/image )
+status code - varios are status code of HTTP - https://www.restapitutorial.com/httpstatuscodes.html
+
+
+
