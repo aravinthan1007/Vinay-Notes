@@ -98,6 +98,16 @@ public class HelloServlet extends HttpServlet {
 
 }
 
+Servlet Scope - 
+1)servletrequest - resquest scope - whenever change in URI -new request is created 
+2)servletcontext - application level or scope 
+3)Httpsession - session scope - user associated or client assosiated - 
+
+Void setattributes(string key ,object value);- insert as well as update
+object getattributes(String key);-read
+void removeattributes(String Key); - delete method
+
+
 
 
 
