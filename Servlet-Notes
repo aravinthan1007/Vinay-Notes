@@ -131,11 +131,16 @@ Create Login app:
  step 20 :in catch field enter the rd=request.redirectdispatcher("login.html)
  step 21: rd(request,response) for the invalid user 
  step 22: Create another servlet for login sucess page 
- ste 23: call the servlet 2 - for sucess by declaring  rd= reques.getdispatcher("sucess") and rd.forward to another servlet 
+ step 23: call the servlet 2 - for sucess by declaring  rd= reques.getdispatcher("sucess") and rd.forward to another servlet 
  
 
 
- 
+ Statefulness - even url link change or modified using forward menthod this with complete details in the previous server
+ session management - reduce the no ofcall to the database , to increase the speed of the application 
+ 1)Hiddent form field - it will hidden in HTML and user not able to see - complete code one.html is hidden in the two.html , but it will combine all data together - UI will get lot of hidden tag that slow the application
+ 2)url rewritting - include the values in the URL , data uphend in the url link 
+ 3)cookies - stored in the user browser - stored in array 
+ 4)Httpsession 
  
 
 
