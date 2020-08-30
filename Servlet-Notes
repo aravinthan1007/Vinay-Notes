@@ -108,6 +108,36 @@ object getattributes(String key);-read
 void removeattributes(String Key); - delete method
 
 
+Create Login app:
+ Step 1 : create HTML page with action = Login controller to connect the servlet for username and password 
+ Step 2: Create servlet as controller with service menthod 
+ Step 3: Create pjo class or model class 
+ step 4: model class as the username, password with setter and getter 
+ step 5:call the model class in the servlet by user user = new user()
+ step 6: call the user id and password with request.getparameter(userid and password )
+ step 7: create bo class and Exception class used in previous project 
+ Step 8 : bo class to validate the user or throws exception 
+ step 9 :create if statement to validate the data in the database with ending @simplilearn or password 
+ Step 10: else class to invalid user id or password 
+ Step 11:Create DAO implementation class 
+ Step 12: we are using singleton java class - mutiple package of class to work as an single application 
+ Step 13: dao implimentation of validating the data
+ Step 14: use try with resource to connect the database because it doesn't have final block required 
+ step 15: write the sql query "string sql = "select userid form loginmaster where userid=? and password=?
+ step 16 : prepared statement created to connect the sql query 
+ step 17: to execute query to execute the above mentioned code 
+ step 18 : call the DAO class to the bo class 
+ step 19 :create try and catch in the sevlet controller 
+ step 20 :in catch field enter the rd=request.redirectdispatcher("login.html)
+ step 21: rd(request,response) for the invalid user 
+ step 22: Create another servlet for login sucess page 
+ ste 23: call the servlet 2 - for sucess by declaring  rd= reques.getdispatcher("sucess") and rd.forward to another servlet 
+ 
+
+
+ 
+ 
+
 
 
 
