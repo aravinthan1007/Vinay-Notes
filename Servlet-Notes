@@ -157,6 +157,8 @@ Create Login app:
  step 13: executed the program and see the servlet navigating 
  
  Seesion Management :
+ Used to monitor the user activity in session like netbanking session limiter to single browser , timeout are handled by session 
+ 
  
  
  
