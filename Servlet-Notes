@@ -132,15 +132,35 @@ Create Login app:
  step 21: rd(request,response) for the invalid user 
  step 22: Create another servlet for login sucess page 
  step 23: call the servlet 2 - for sucess by declaring  rd= reques.getdispatcher("sucess") and rd.forward to another servlet 
+ response.redirect - uses different URL link , new responses 
  
-
-
  Statefulness - even url link change or modified using forward menthod this with complete details in the previous server
  session management - reduce the no ofcall to the database , to increase the speed of the application 
  1)Hiddent form field - it will hidden in HTML and user not able to see - complete code one.html is hidden in the two.html , but it will combine all data together - UI will get lot of hidden tag that slow the application
  2)url rewritting - include the values in the URL , data uphend in the url link 
  3)cookies - stored in the user browser - stored in array 
  4)Httpsession 
+ 
+ Cookies using servlet :
+ Step 1: update the web.xml with the index file , two.tml and three.html
+ step 2: Create first or index.html and method = post action = servlet name 
+ step 3: input fields username , name , DOB etc in first.html
+ step 4: two and three.html with the different set of input like Education , age etc 
+ step 5: back to web.xml page update create the annotations in the servlet page "@webservlet("/first")
+ step 6: create the controller servlet with the service method 
+ step 7: calling HTML value using string.getparameter 
+ step 8: create the cookies like cookie c1 = new cookie("Firstname",fname)
+ step 9: add the cookie in browser by response.addcookie(c1)
+ step 10: create second servlet with cookies to call the second page 
+ step 11: create the summary sevlet access all the data from one and two.html by cookies cookies[] = request.getcookies() as array abd create the for loop 
+ step 12:for(cookie:cookie) get the values from the different servlet 
+ step 13: executed the program and see the servlet navigating 
+ 
+ Seesion Management :
+ 
+ 
+ 
+ 
  
 
 
