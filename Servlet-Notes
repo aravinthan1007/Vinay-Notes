@@ -172,7 +172,12 @@ Create Login app:
  
  
  
- 
+ Servlet Filter :
+ filter comes between client and servlet, filter is used for validation , user for preprossessing and postprocessing 
+ Lifecylcle of servlet 
+ 1.void init(filter config)
+ 2.void dofilter(request,response,filter chain) - with help of filterchain it will navigate to servlet 
+ 3.void destroy()
  
  
  
