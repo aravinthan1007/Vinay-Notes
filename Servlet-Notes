@@ -159,6 +159,18 @@ Create Login app:
  Seesion Management :
  Used to monitor the user activity in session like netbanking session limiter to single browser , timeout are handled by session 
  
+ Step 1:create the PJO class / Model class with the user 
+ step 2:create fname , college.city,contact in the moe user class with getter and setter class and tostring, unique ID would be re-written as hashcode
+ step 3:Create the sevlet and the get the input from the html with the service method 
+ step 4:session would be created one at a time and create the session like httpsession session = request.getsession() - this will create new session and overload the method
+ step 5:session.setattributes("user",user)- used to insert and update in the page and finally communicate the two.html
+ step 6:go to second servlet httpsession session = request.getsession(false)- this will not create new session , it will pariticipate in the session
+ step 7: create if statement to validate the session and pass the value in the else session 
+ step 8: Create summary servlet validate the session as mentioned above and create if statement to validate the session and pass the value in the else session 
+ Step 9: call the previous session out.println(""+user.getname(),session.getid() and close the servlet session.invalidate()
+ Step 10: create the resuable session as common class httpsession session = request.getsession(false) this code will be reused in all the servlet, instead of retyping the code
+ 
+ 
  
  
  
