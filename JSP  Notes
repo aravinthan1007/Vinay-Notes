@@ -1,1 +1,10 @@
-
+JEE as three container - JSP,servlet and EJB container is to load and execute the life cycle of the container 
+ JSP (Java Server page):
+ Problem statement 1- you have reistration page with multiple parameter , lot of data entry fields , Servlet can't display error message next to tab or data , servlet activated with url not with the UI
+ problem statement 2 - display complete database of ID's we need to write lot of boliler plate of code , servlet not good for presentation layer 
+ JSP is combination of servlet and HTML , internally it's converted into servlet 
+ JPS as tag for everything , servlet is used for secure page , JSP is not secured as servlet , so all business layer in the servlet 
+ Architecture of JSP :
+ controller -  incoming request goes it view.jsp and model.java(pojo class)
+ 
+ 
