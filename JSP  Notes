@@ -6,5 +6,40 @@ JEE as three container - JSP,servlet and EJB container is to load and execute th
  JPS as tag for everything , servlet is used for secure page , JSP is not secured as servlet , so all business layer in the servlet 
  Architecture of JSP :
  controller -  incoming request goes it view.jsp and model.java(pojo class)
- 
+ JSP Life cycle :
+1. Translation stage  - translated to servlet(.java)
+2. JSP init()
+3._jsp service() - Method can't be over written 
+4.destroy()- Garbage collection- clean the inactive service 
+
+9 JSP Implicit objects ( Predifined object in JSP)
+1.request - servletrequest 
+2.response - servletresponse 
+3.out - JSP writer like out.println(servlet)
+4.config -servletconfig 
+5.application - servletcontext 
+6.session - httpsession 
+7.page - object - visible only in particular JSP page 
+8.Exception - throwable 
+9.pagecontext - capablity add,read ,modify and remove attribute 
+
+JSP Tags:
+Scripting Tags - used for communication,printing,logic 
+JSP Directives 
+JSP Action tags
+Comments tag 
+custom tag or user defined tag
+
+Scripting Tag 
+1)Declaration Tag -<%! int x=5;%> - class level or global level or common to all object 
+2)Expression Tag - <%="Hello"%> - printing result or Expression , Servlet send some date into JSP, using this tag servlet message printed in the HTML box
+3)scriplet Tag - <% all logic service %>
+
+
+
+
+
+
+
+
  
