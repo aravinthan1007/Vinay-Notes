@@ -36,10 +36,31 @@ Scripting Tag
 3)scriplet Tag - <% all logic service %>
 
 
+Form creation using scripting tag :
+step 1: create the form tag with action = "">
+Step 2: enter name , input type is text 
+step 3: input =submit and click 
+step 4: create JSP tag to validate above click using if(click != null) that means it click
+step 5:print the result of above if class with request.getparameter("fname")
+
+JSP Directive :
+
+<%@%>
+<%@page%>
+<%include%> - include some page include tag is used
+<%taglib%> - refering the custom tag , helpful for import all the tag in particular folder
+
+Demo JSP Directive :
+<%=<h1>Hello for JSP @ +new date()%>"</h1>" - it will import the java util 
+Exception handling in JSP 
+Step 1 : Create new JSP page as error 
+step 2 : declare @page iserrorpage ="true"
+step 3: print the error message using span or out.print with style as Error occured<%=exception%>
+step 4: get back to the execution page <%@page errorpage =ërror.jsp> and <%@page iserrorpage ="true"%>
+
+Action Tags:-Dynamic operation in JSP 
+difference between @include directive  - is include the response in the translation phase itself 
+<Jsp:inclue> in action tag - converts the response only and only if required when application is running 
 
 
 
-
-
-
- 
