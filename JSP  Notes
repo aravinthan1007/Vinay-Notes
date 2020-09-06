@@ -87,6 +87,50 @@ Step 1: create eb application project and create the JSP page
 step 2:create form in the JSP page with name , age ,DOB etc , action ="post"
 step 3: validate the above parameter using if class by validating the register button as above 
 step 4: create the <JSP:userbean> id ="pojo class "or model class and class ="import the java package code" scope = resquest> - it looking within the current request scope , if user object is available 
-step 5: 
+step 5: create the <JSP:setattribute> get all the setter details from the pojo class
+step 6: create the <JSP:forward>to communicate with the servlet page 
+step 7: create the servlet with calling the jsp and pojo page and above procedure used to create the registration page 
+step 8: create the session
+
+Custom Tag:
+Why we need custom tag ? - 10 JSP pages 5 lines of code common for all 10 JSP pages , if we write in JSP it will be 50 JSP page , instead of that create the custom tag call java code 
+and lots of presentation exposed to user , by writting custom tag this will be hidden and security is getting increased 
+1. simple tag - without attribute and body example <br></br>
+2. tag with attributes - <input type ="text"> 
+3. tag with or without attributes - eg <div align="center"></div>
+
+steps to develop custom tag :
+step 1: create taghandler java class and overide dotag() write the logic of what tag exacty to do when called in JSP 
+step 2: create a .tld(tag libary descriptor) file which is a xml file where you need to give configuration of the tag class which you created in step 1 
+step 3: use directive <%@taglib%> import the  .tld file  created in step2 on any JSP  page and start calling your custom tag  on that particular JSP page
+
+Demo Custom Tag :
+Step 1: crete the Dynamic page 
+step 2: create pakage tags 
+step 3: create java class with the extends simpletagsupport
+step 4:create the dotag() 
+step 5: create jspwriter out = getjspcontext().getout()
+step 6 : out.print the date 
+step 7: create tld file is mytag.tld
+step 8 :paste the oracle header for custom tag 
+step 9 : whole tag covered in the <taglib></taglib>
+step 10 : declare the <tlib-version>1.0 
+step 11: declare <jsp-version>2.0
+step 12 : <shortname> used to name differenciation and this used to call the tag eg: we may create the htmltag , this won't work in jsp , instead of that use shortname 
+step 13: open the <tag> and <name>mydate</name>
+step 14: declare the class <tag-class>com.tags.simpledatetag</tag-class> and <body-content>empty<body-content> as no body in the tag
+step 15: create the HTML page with the <%taglib  prefix=st uri ="web-inf/mytag.tld%> and click on control and link we can see the taglib file 
+step 16 :
+
+
+
+
+
+
+
+
+
+
+
 
 
