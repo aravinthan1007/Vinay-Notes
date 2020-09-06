@@ -104,7 +104,7 @@ step 1: create taghandler java class and overide dotag() write the logic of what
 step 2: create a .tld(tag libary descriptor) file which is a xml file where you need to give configuration of the tag class which you created in step 1 
 step 3: use directive <%@taglib%> import the  .tld file  created in step2 on any JSP  page and start calling your custom tag  on that particular JSP page
 
-Demo Custom Tag :
+Demo Custom Tag :(Simple Tag)
 Step 1: crete the Dynamic page 
 step 2: create pakage tags 
 step 3: create java class with the extends simpletagsupport
@@ -120,11 +120,46 @@ step 12 : <shortname> used to name differenciation and this used to call the tag
 step 13: open the <tag> and <name>mydate</name>
 step 14: declare the class <tag-class>com.tags.simpledatetag</tag-class> and <body-content>empty<body-content> as no body in the tag
 step 15: create the HTML page with the <%taglib  prefix=st uri ="web-inf/mytag.tld%> and click on control and link we can see the taglib file 
-step 16 :
+
+Demo for tag with attributes with date formate as example :
 
 
+Step 1: crete the Dynamic page 
+step 2: create pakage tags 
+step 3: create java class with the extends simpletagsupport
+step 4:create the dotag() 
+step 5: create jspwriter out = getjspcontext().getout()
+step 6 : out.print the date 
+step 7: create the string attribute eg format to change date
+step 8: create this formate 
+step 9: call the formate in out.println( new simpledateformat(format).format(new date()))
+step 10: ceate the tag lib file or tld file
+step 11:paste the oracle header for custom tag 
+step 12: whole tag covered in the <taglib></taglib>
+step 13 : declare the <tlib-version>1.0 
+step 14: declare <jsp-version>2.0
+step 15 : <shortname> used to name differenciation and this used to call the tag eg: we may create the htmltag , this won't work in jsp , instead of that use shortname 
+step 16: open the <tag> and <name>mydate</name> and <attribute> and <name> of the attribute , required<true>,<rtexprvalue>true to evaluate the java code
+step 17: create the HTML page with the <%taglib  prefix=st uri ="web-inf/mytag.tld%> and click on control and link we can see the taglib file 
+step 18: under H1 declare the formate of the date
 
+Demo for tag with or without attributes :
 
+Step 1: crete the Dynamic page 
+step 2: create pakage tags 
+step 3: create java class with the extends simpletagsupport
+step 4:create the dotag() 
+step 5: create jspwriter out = getjspcontext().getout()
+step 6: stringwriter  sw = new stringwriter(); used getjspbody.invoke(sw)
+step 7: convert the string and anything can be converted to string using Java as out.println(sw.tostring().touppercase());
+step 7: create tld file is mytag.tld
+step 8 :paste the oracle header for custom tag 
+step 9 : whole tag covered in the <taglib></taglib>
+step 10 : declare the <tlib-version>1.0 
+step 11: declare <jsp-version>2.0
+step 12 : <shortname> used to name differenciation and this used to call the tag eg: we may create the htmltag , this won't work in jsp , instead of that use shortname 
+step 13: open the <tag> and <name>mydate</name>
+step 14: declare the class <tag-class>com.tags.simpledatetag</tag-class> and <body-content>scriptless<body-content> as no body in the tag
 
 
 
