@@ -61,6 +61,32 @@ step 4: get back to the execution page <%@page errorpage =ërror.jsp> and <%@pag
 Action Tags:-Dynamic operation in JSP 
 difference between @include directive  - is include the response in the translation phase itself 
 <Jsp:inclue> in action tag - converts the response only and only if required when application is running 
+<Jsp:forward>
+<jsp:usebean>
+<jsp:setproperty>
+<jsp:getproperty>
+Demo for Include :
+Step 1: create the JSP page 
+step 2: seprate page for footer.html 
+step 3:create div parameter for common footer 
+step 4: back to JSP page <@% include file= "footer.html"%> it is based on Directive 
+step 5:create a form in the index page 
+step 6: validate the click using if class by request.getparameter("click"!= nul)
+step 7:validating the entered values 
+step 9:create three files for traniee ,trainer and manager 
+step 10:remove the html tags in the different pages
+step 11:traniee page one div tag as well as in manager
+step 12:if class is validated the trainee <Jsp:include pae ="tranier.jsp">
+step 13: else if to match trainer or manager and use above mentioned include to navigate different page 
 
+Reflection API: reduce the model class with declaration, setters and getters , reflection is used to reflect from anything to anything it will reduce the boiler plate of code in the model class 
+Every name identified using field name it should be lower case 
+
+Demo of Reflection API :
+Step 1: create eb application project and create the JSP page 
+step 2:create form in the JSP page with name , age ,DOB etc , action ="post"
+step 3: validate the above parameter using if class by validating the register button as above 
+step 4: create the <JSP:userbean> id ="pojo class "or model class and class ="import the java package code" scope = resquest> - it looking within the current request scope , if user object is available 
+step 5: 
 
 
