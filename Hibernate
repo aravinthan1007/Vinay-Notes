@@ -1,1 +1,23 @@
+Hibernate requirement -1. Changes in Database provider , query would be different 
+                       2.Bulk query tranfering one database to another 
+Hibernate - ORM and OGM is used object based java code into query and mapping the database, ORM is relational Database ,OGM is for Nosql
+it will eliminate the writing of the SQL query or code , intracting using JDBC Driver internally , Hibernate called optional relational Database , it uses builder(filter) and factory pattern
+
+Data source - Driver,connection ,username and password 
+Dialect - version of DB the above mentioned data needs to be informed to Hibernate/JPA
+
+How to Intract with Hibernate :
+1.needs to written in hibernate.cfg.xml,datasource,dialect,whic pojo classes ,pool and caching
+
+  1.identify hibernate.cfg to which particular database provider it connecting is called configuration
+  2.Standard service register builder , build the configrtion 
+  3.session factory ,session is works only with primary coloum value it is mandatory to communicate with data for storing deleting ,updating etc , Unique ID is primary key ,
+  session(pk) -->query API(HQL) which apply restriction to database (i.e)without working with primary key
+  transaction (JTA) , commit transaction ,close session  and finally close factoy 
+  
+  Architecture of Hibernate :
+  
+  
+
+
 
