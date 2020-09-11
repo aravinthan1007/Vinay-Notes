@@ -15,9 +15,58 @@ How to Intract with Hibernate :
   session(pk) -->query API(HQL) which apply restriction to database (i.e)without working with primary key
   transaction (JTA) , commit transaction ,close session  and finally close factoy 
   
-  Architecture of Hibernate :
-  
-  
+ Dailect Verion DB :
+ 1.tanstient state
+ 2.presistent state 
+ session.save(pojo)
+ session.saveorupdate(pojo)
+ 3. Detached state
+ 
+ Demo :
+ step 1: create maven project 
+ step 2: Add the hybernate to dependency and mysql dependency in the pom.xml
+ step 3: Add xml file in the resources and it should be hibernate.cfg.xml
+ step 4: Declare JDBC Driver and credencial details in the hibernate.cfg.xml
+ step 5:create the model class 
+ step 6: create the annotation in the model class "@Entity"-used identify speech domain or set domain
+ step 7: @table- create the table or as the table
+ step 8:@ID above the declaration of ID in the pojo class
+ step 9: Mapping Hibernate in the cfg.hibernate <mapping class="declare the pojo or model class">
+ step 10:hbm2ddl update the state as "create-drop"
+ step 11: back to java main page 
+ step 12:loading the configuration by creating the object
+ step 13:create a standard service builder 
+ step 14:esion factory for build the fatory 
+ step 15 : factory close - to close 
+ 
+ hbm2ddl :
+ 
+create/drop 
+-drop the existing table 
+-create the tae when the sesion factory is starting 
+- when close tble , it drops all the table 
 
-
+Create 
+-drop the existing table 
+-create the tae when the sesion factory is starting 
+- when close tble , it won't drops all the table 
+  
+ update 
+ this option create that table are already existing and useful when the app is live 
+  
+step 1: create maven project 
+ step 2: Add the hybernate to dependency and mysql dependency in the pom.xml
+ step 3: Add xml file in the resources and it should be hibernate.cfg.xml
+ step 4: Declare JDBC Driver and credencial details in the hibernate.cfg.xml
+ step 5:create the model class 
+ step 6: create the annotation in the model class "@Entity"-used identify speech domain or set domain
+ step 7: @table- create the table or as the table
+ step 8:@ID above the declaration of ID in the pojo class
+ step 9: @Generatedvalue(statergy = generationtype.auto)- user to auto generate the ID
+ step 10:set not null for manufacturename @column(nullable =false , name="manname", length=100) name is changing the object name and length is to number of character (eg Varchar(100))
+ Step 11: @Temporal()-used to create date in the database
+ step 12: query query = sesion.createquery("from com.hibernate.model.laptop)-get all the data from the database
+ step 13: List <Laptop> laplist =query.list and for loop completly print the data
+ step 14 : fiter based on value query query = sesion.createquery("from com.hibernate.model.laptop where  cost=:cost ) or("from com.hibernate.model.laptop where  cost=:cost cost order by cost desc) and query.setdouble("cost",135.2) get based on the cost value
+ step 15: 
 
