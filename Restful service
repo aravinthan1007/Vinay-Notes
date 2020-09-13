@@ -11,7 +11,7 @@ Spring Rest
 
 What makes a restful API?
 Rest Architectural constrains - 6 Constrains 
-1.unifrom interface -Cosistent Approach - 
+1.unifrom interface -Cosistent Approach - uri should be meaningful and not complicated
 2.client-server - existing as ifferent thing clint and server
 3.statelessness - intraction between client and server should be setless , No client context should be stored in server , client need manage the state of it , if server maintained over the client session  it will make  the server busy and bulk data
 4.Cacheing - Temporary memory -reduce number of call to database or server,- caching in server - reduce call to database , - caching i client-reduce call to server 
@@ -19,6 +19,16 @@ Rest Architectural constrains - 6 Constrains
 6.Code on demand - Source code shared to client , 
 
 Postman - used to test the rest endpoint 
+
+Get is for DB and Load is for Cache 
+
+Front Controller - Come at one and exit at same point:
+Jersey API to request to servlet container to classes again servlet to respone to Jersey API
+
+
+
+
+
 
 
 
