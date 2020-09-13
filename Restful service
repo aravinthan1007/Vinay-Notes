@@ -1,1 +1,27 @@
+Web services - W3 suggested the SOAP (XML) - Promblem is XML bulk for the complex application, reduce the speed of the application 
+
+Rest is Architecture style - Roy finding suggested --> web service uses HTTP -->rest run on the HTTP formate appliction is simple xml, supported JSON , Localy understood by the server,html and text
+https/http -put,get,delete,post, status code/mesage updated here . 
+
+Rest is URL based and endpoint(URI or /welcome or/index)
+
+Rest Implementation :
+JAX-RS-->(Jersy API )
+Spring Rest 
+
+What makes a restful API?
+Rest Architectural constrains - 6 Constrains 
+1.unifrom interface -Cosistent Approach - 
+2.client-server - existing as ifferent thing clint and server
+3.statelessness - intraction between client and server should be setless , No client context should be stored in server , client need manage the state of it , if server maintained over the client session  it will make  the server busy and bulk data
+4.Cacheing - Temporary memory -reduce number of call to database or server,- caching in server - reduce call to database , - caching i client-reduce call to server 
+5.layered system - Avoid thing to client about how datastored, authendication works 
+6.Code on demand - Source code shared to client , 
+
+Postman - used to test the rest endpoint 
+
+
+
+
+
 
