@@ -25,6 +25,25 @@ Get is for DB and Load is for Cache
 Front Controller - Come at one and exit at same point:
 Jersey API to request to servlet container to classes again servlet to respone to Jersey API
 
+Array - https://www.youtube.com/watch?v=c3RVW3KGIIE&t=24s
+
+Create a BookApp - 
+Step 1 : create Dyanmic web poject 
+step 2: initiate the <servlet>,<servlet-name>,<servlet-class>,org.glasfish.jersey.servlet.servletcontainer</servlet-class>
+step 3: initiate the <param-name> to jersey.config.server.provider.package to pakage of the jersy and <param-value>com.book.contorller,<servletname>jersyservlet and <url-mapping>*/
+step 4:create the model/hello world class 
+step 5: create the controller java class 
+step 6:@Path("/")to connect XML param value to controller
+step 7:@get method to search or update , create the procedure to access the get menthod in the postman same procedure followed in post,put,delete 
+step 8: create the model app for Book or pojo class
+step 9: @entity and @table to create the table in hibernate with int id(@generatedvalue( statergy=generationtype.auto),string name ,float cost
+step 10: call the code into the servlet controller @path ,@Post ,@consume(Mediatype.applcation_json),@produces(Mediatype.application)
+step 11: create book to call the DAO and BO layer 
+step 12:create the BO and BoImpl , followed by the DAO and DAOImpl
+step 13:Add the hiberanate.cfg file to communicate the database 
+step 14: In DAO for create deleclare session ,transaction ,session.save ,transaction.commit 
+
+step 11:open the postman and (name 
 
 
 
